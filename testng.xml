@@ -6,9 +6,9 @@
       <class name="VF_Quote_Creation_And_Response.LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Del"/>
     </classes>
   </test> <!-- Test -->
-   <test thread-count="5" name="Test2">
+   <!-- <test thread-count="5" name="Test2">
     <classes>
       <class name="VF_Quote_Creation_And_Response.LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal"/>
     </classes>
-  </test> <!-- Test -->
+  </test> Test -->
 </suite> <!-- Suite -->
