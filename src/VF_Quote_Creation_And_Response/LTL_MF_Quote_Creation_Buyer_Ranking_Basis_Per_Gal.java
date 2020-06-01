@@ -55,7 +55,7 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 	public void setUptest(){
 
 		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+				"../VF_Hybrid/Resources/chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
