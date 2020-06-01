@@ -81,7 +81,7 @@ public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del {
 	public void Open_Browser() throws Exception {
 
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_LTL_TW_Seller_Response");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_LTL_TW_Seller_Response");
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
 		test1.log(Status.INFO, "Validating dev site");
 

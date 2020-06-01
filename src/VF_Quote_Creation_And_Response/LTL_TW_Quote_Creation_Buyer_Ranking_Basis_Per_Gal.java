@@ -81,7 +81,7 @@ public class LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 		test1.log(Status.INFO, "Navigating to dev site");
 
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_LTL_TW_Quote_Creation_Buyer");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_LTL_TW_Quote_Creation_Buyer");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 

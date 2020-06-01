@@ -44,8 +44,9 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 	@BeforeSuite
 	public void setUp(){
-
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/FTL Freight Only/FTL_Quote_Creation_Buyer_Ranking_Basis_$_Per_Gal.html");
+		
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/FTL Freight Only/FTL_Quote_Creation_Buyer_Ranking_Basis_$_Per_Gal.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -56,9 +57,10 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 	@BeforeTest
 	public void setUptest(){
-
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+		
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -82,7 +84,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
 		
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_FTL_Quote_Creation_Buyer");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_FTL_Quote_Creation_Buyer");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 
@@ -156,7 +158,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("dashboardnewBuyerClick")));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 		VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 		WebElement  newquote = driver.findElement(By.id("dashboardnewBuyerClick"));
@@ -208,7 +210,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 			WebDriverWait wait0 = new WebDriverWait(driver, 20);
-			wait0.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Create")));
+			wait0.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 
 			WebElement create=driver.findElement(By.linkText("Create"));
 			if(create.isDisplayed()){
@@ -250,7 +252,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("createRFP_ServiceType")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 
 			WebElement quotename=driver.findElement(By.id("createRFP_Name"));
 			quotename.sendKeys(ExcelUtils.getCellData(12, colnum));
@@ -1067,7 +1069,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 			test1.info(ExcelUtils.getCellData(12, colnum) + " Quote is saved as draft");
 
 			WebDriverWait wait5 = new WebDriverWait(driver, 100);
-			wait5.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Create")));
+			wait5.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 
@@ -1090,7 +1092,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 			Thread.sleep(3000);
 			WebDriverWait wait0 = new WebDriverWait(driver, 10);
-			wait0.until(ExpectedConditions.presenceOfElementLocated(By.id("ancrUOMSearch")));
+			wait0.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 			WebElement searchsymbol = driver.findElement(By.id("ancrUOMSearch"));
@@ -1109,7 +1111,7 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 			WebDriverWait wait = new WebDriverWait(driver, 100);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("createRFP_Name")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 			WebElement sellerscroll=driver.findElement(By.xpath("//*[@id='VendorGrid']/div[4]/span[2]"));
@@ -1189,8 +1191,8 @@ public class FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 			Thread.sleep(2000);
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
-			WebDriverWait wait5 = new WebDriverWait(driver, 100);
-			wait5.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Create")));
+			WebDriverWait wait51 = new WebDriverWait(driver, 100);
+			wait51.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 			VF_Screenshot.FTL_Buyer_Quote_Creation_screenshot.CaptureScreenshot(driver);
 
 

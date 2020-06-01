@@ -40,8 +40,9 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Del {
 
 	@BeforeSuite
 	public void setUp(){
-
-		htmlReporter= new ExtentHtmlReporter("LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Del.html");
+		
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Mobile Fueling/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Del.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -53,9 +54,10 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Del {
 
 	@BeforeTest
 	public void setUptest(){
-
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\dell\\workspace\\VF_Hybrid\\Resources\\chromedriver.exe");
+		
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -81,7 +83,7 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Del {
 		test1.log(Status.INFO, "Navigating to dev site");
 
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_LTL_MF_Quote_Creation_Buyer");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_LTL_MF_Quote_Creation_Buyer");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 
@@ -1229,7 +1231,7 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Del {
 	@AfterTest
 	public void teardowntest(){
 
-		//driver.close();
+		driver.close();
 
 	}
 

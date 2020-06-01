@@ -78,7 +78,7 @@ public class LTL_MF_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Del {
 
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_LTL_MF_Seller_Response");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_LTL_MF_Seller_Response");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 

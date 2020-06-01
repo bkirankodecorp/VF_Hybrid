@@ -42,8 +42,9 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/FTL Freight Only/FTL_Seller_Response_Ranking_Basis_$_Per_Gal.html");
-
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/FTL Freight Only/FTL_Seller_Response_Ranking_Basis_$_Per_Gal.html");
+		
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
@@ -53,9 +54,10 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 
 	@BeforeTest
 	public void setUptest(){
-
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+		
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -79,7 +81,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 	public void Open_Browser() throws Exception {
 
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_FTL_Seller_Response");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_FTL_Seller_Response");
 		String Url = ExcelUtils.getCellData(4, colnum);
 		driver.get(Url);
 		Thread.sleep(2000);
@@ -151,7 +153,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 	public  void verify_Seller_login() throws Exception{
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("dashboardnewSellerClick")));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 		VF_Screenshot.FTL_Seller_Quote_Response_screenshot.CaptureScreenshot(driver);
 
 		WebElement  newquote = driver.findElement(By.id("dashboardnewSellerClick"));
@@ -201,7 +203,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 			VF_Screenshot.FTL_Seller_Quote_Response_screenshot.CaptureScreenshot(driver);
 
 			WebDriverWait wait0 = new WebDriverWait(driver, 100);
-			wait0.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h3[contains(text(),'New Quotes')]")));
+			wait0.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 
 			WebElement newquote=driver.findElement(By.xpath("//h3[contains(text(),'New Quotes')]"));
 			if(newquote.isDisplayed()){
@@ -551,7 +553,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 			VF_Screenshot.FTL_Seller_Quote_Response_screenshot.CaptureScreenshot(driver);
 
 			WebDriverWait wait = new WebDriverWait(driver, 150);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("btnQRWorkBenchSave")));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 			VF_Screenshot.FTL_Seller_Quote_Response_screenshot.CaptureScreenshot(driver);
 
 			WebElement ftlfregihtonly=driver.findElement(By.xpath("//*[@id='expandallfreight']/label[1]"));
@@ -1384,7 +1386,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal {
 
 			Thread.sleep(3000);
 			WebDriverWait wait0 = new WebDriverWait(driver, 100);
-			wait0.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[5]/div[2]/div/div[2]/div/div/div/div/div/div[1]/div/div[1]/div/div[1]/div/a/span/i")));
+			wait0.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 			VF_Screenshot.FTL_Seller_Quote_Response_screenshot.CaptureScreenshot(driver);
 
 			WebElement activequotes=driver.findElement(By.xpath("//span[contains(text(),'Active')]"));

@@ -42,8 +42,9 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/FTL Freight Only/FTL_Quote_Buyer_Side_Calculations_Verification_$_Per_Period.html");
-
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/FTL Freight Only/FTL_Quote_Buyer_Side_Calculations_Verification_$_Per_Period.html");
+		
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
@@ -54,9 +55,10 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 
 	@BeforeTest
 	public void setUptest(){
-
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+		
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -80,7 +82,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_FTL_Seller_Response");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_FTL_Seller_Response");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 

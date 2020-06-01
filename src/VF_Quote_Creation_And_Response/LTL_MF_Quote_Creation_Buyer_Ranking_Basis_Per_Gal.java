@@ -28,7 +28,6 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import Utility.Constant;
-import Utility.Constant2;
 import Utility.ExcelUtils;
 public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
@@ -88,7 +87,7 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 		
 
-		ExcelUtils.setExcelFile(Constant2.path + Constant2.pathtest,"VF_LTL_MF_Quote_Creation_Buyer");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_LTL_MF_Quote_Creation_Buyer");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 

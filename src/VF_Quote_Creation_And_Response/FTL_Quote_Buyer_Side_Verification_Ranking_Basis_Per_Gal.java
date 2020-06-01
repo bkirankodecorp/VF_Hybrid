@@ -40,8 +40,9 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/FTL Freight Only/FTL_Quote_Buyer_Side_Calculations_Verification_$_Per_Gal.html");
-
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/FTL Freight Only/FTL_Quote_Buyer_Side_Calculations_Verification_$_Per_Gal.html");
+		
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
@@ -52,9 +53,10 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal {
 
 	@BeforeTest
 	public void setUptest(){
-
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+		
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -78,7 +80,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal {
 
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_FTL_Seller_Response");
+		ExcelUtils.setExcelFile(Constant.path + Constant.pathtest,"VF_FTL_Seller_Response");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 
@@ -1606,7 +1608,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal {
 
 
 		WebDriverWait wait0 = new WebDriverWait(driver, 100);
-		wait0.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='expandallfreight']/label[1]")));
+		wait0.until(ExpectedConditions.invisibilityOfElementLocated(By.id("spinner")));
 		Thread.sleep(2000);
 
 		ExtentTest test1 = extent.createTest("Verify_FuelSurcharge_and_Accessorial_Service_Fees_(Per Delivery)_in_TandC_for_Awarded_Quote", "Verify Fuel Surcharge and Accessorial Service Fees (Per Delivery) : in TandC");

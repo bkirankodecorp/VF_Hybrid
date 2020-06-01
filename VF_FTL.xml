@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	 <test thread-count="5" name="FTL Quote Creation Buyer $ per Del">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Del" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Seller Response $ per Del">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Seller_Response_Ranking_Basis_Per_Del" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Buyer calucation verification for $ per Del">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Del" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Quote Creation Buyer $ per Gal">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Seller Response $ per Gal">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Buyer calucation verification for $ per Gal">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Quote Creation Buyer $ per Period">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Period" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Seller Response $ per Period">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Seller_Response_Ranking_Basis_Per_Period" />
+		</classes>
+	</test>
+	<test thread-count="5" name="FTL Buyer calucation verification for $ per Period">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->
