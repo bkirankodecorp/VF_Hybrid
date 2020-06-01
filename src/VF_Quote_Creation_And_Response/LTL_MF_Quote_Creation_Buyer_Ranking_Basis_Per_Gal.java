@@ -28,6 +28,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import Utility.Constant;
+import Utility.Constant2;
 import Utility.ExcelUtils;
 public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
@@ -40,8 +41,9 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 	@BeforeSuite
 	public void setUp(){
-
-		htmlReporter= new ExtentHtmlReporter("../VF_Hybrid/LTL Mobile Fueling/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Gal.html");
+		
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Mobile Fueling/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Gal.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -53,9 +55,13 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 
 	@BeforeTest
 	public void setUptest(){
+		
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver",
-				"../VF_Hybrid/Resources/chromedriver.exe");
+		/*System.setProperty("webdriver.chrome.driver",
+				"../VF_Hybrid/Resources/chromedriver.exe");*/
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -80,8 +86,9 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Gal {
 		ExtentTest test1 = extent.createTest("Open D1 Fuel Connect", "Validating dev site");
 		test1.log(Status.INFO, "Navigating to dev site");
 
+		
 
-		ExcelUtils.setExcelFile(Constant.Path_TestData + Constant.File_TestData,"VF_LTL_MF_Quote_Creation_Buyer");
+		ExcelUtils.setExcelFile(Constant2.path + Constant2.pathtest,"VF_LTL_MF_Quote_Creation_Buyer");
 
 		String Url = ExcelUtils.getCellData(4, colnum);
 
