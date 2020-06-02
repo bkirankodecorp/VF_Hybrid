@@ -37,7 +37,7 @@ import Utility.ExcelUtils;
 public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del {
 
 	private static WebDriver driver;
-	private static int colnum=6;
+	private static int colnum=4;
 	
 	ExtentHtmlReporter htmlReporter;
 	ExtentReports extent;
@@ -46,7 +46,8 @@ public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/LTL Tankwagon/LTL_Seller_Response_Ranking_Basis_$_Per_Del.html");
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Tankwagon/LTL_Seller_Response_Ranking_Basis_$_Per_Del.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -58,8 +59,9 @@ public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del {
 	@BeforeTest
 	public void setUptest(){
 
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
@@ -1163,7 +1165,7 @@ public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del {
 			
 			((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-			WebElement rankingbasis=driver.findElement(By.xpath("//*[@id='QuickResponseGrid']/div[3]/table/tbody/tr[1]/td[24]"));
+			WebElement rankingbasis=driver.findElement(By.xpath("//*[@id='QuickResponseGrid']/div[3]/table/tbody/tr[1]/td[28]"));
 			System.out.println("Ranking basis has value as " + rankingbasis.getText());
 			test1.info("Ranking basis has value as " + rankingbasis.getText());
 			
@@ -1180,8 +1182,8 @@ public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del {
 			}
 			else{
 
-				System.out.println("Total Final and Ranking Basis are same and validated and value is " + rankingbasis.getText());
-				test1.pass("Total Final and Ranking Basis are same and validated and value is " + rankingbasis.getText());
+				System.out.println("Total Final and Ranking Basis are not same and validated and value is " + rankingbasis.getText());
+				test1.fail("Total Final and Ranking Basis are not same and validated and value is " + rankingbasis.getText());
 
 			}
 

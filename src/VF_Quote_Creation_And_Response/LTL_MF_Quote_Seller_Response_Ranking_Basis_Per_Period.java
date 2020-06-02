@@ -45,7 +45,8 @@ public class LTL_MF_Quote_Seller_Response_Ranking_Basis_Per_Period {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/LTL Mobile Fueling/LTL_Seller_Response_Ranking_Basis_$_Per_Period.html");
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Mobile Fueling/LTL_Seller_Response_Ranking_Basis_$_Per_Period.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -57,9 +58,10 @@ public class LTL_MF_Quote_Seller_Response_Ranking_Basis_Per_Period {
 	@BeforeTest
 	public void setUptest(){
 
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
-
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
+		
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
 		options.addArguments("--disable-web-security");
@@ -1157,7 +1159,7 @@ public class LTL_MF_Quote_Seller_Response_Ranking_Basis_Per_Period {
 			
 			((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-			WebElement rankingbasis=driver.findElement(By.xpath("//*[@id='QuickResponseGrid']/div[3]/table/tbody/tr[1]/td[24]"));
+			WebElement rankingbasis=driver.findElement(By.xpath("//*[@id='QuickResponseGrid']/div[3]/table/tbody/tr[1]/td[28]"));
 			System.out.println("Ranking basis has value as " + rankingbasis.getText());
 			ExcelUtils.setCellData(rankingbasis.getText(), 73, colnum);
 
@@ -1172,8 +1174,8 @@ public class LTL_MF_Quote_Seller_Response_Ranking_Basis_Per_Period {
 			}
 			else{
 
-				System.out.println("Total Final and Ranking Basis are same and validated and value is " + ExcelUtils.getCellData(69, colnum));
-				test1.pass("Total Final and Ranking Basis are same and validated and value is " + ExcelUtils.getCellData(69, colnum));
+				System.out.println("Total Final and Ranking Basis are not same and not validated and value is " + ExcelUtils.getCellData(69, colnum));
+				test1.pass("Total Final and Ranking Basis are not same and not validated and value is " + ExcelUtils.getCellData(69, colnum));
 
 			}
 

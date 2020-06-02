@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="LTL TW Quote Creation Buyer $ per Del">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Del"/>
+    </classes>
+  </test> <!-- LTL TW Quote Creation Buyer $ per Del -->
+  <test thread-count="5" name="LTL TW Quote Creation Buyer $ per Gal">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Gal"/>
+    </classes>
+  </test> <!-- LTL TW Quote Creation Buyer $ per Gal -->
+  <test thread-count="5" name="LTL TW Quote Creation Buyer $ per Period">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Period"/>
+    </classes>
+  </test> <!-- LTL TW Quote Creation Buyer $ per Period -->
+</suite> <!-- Failed suite [Suite] -->

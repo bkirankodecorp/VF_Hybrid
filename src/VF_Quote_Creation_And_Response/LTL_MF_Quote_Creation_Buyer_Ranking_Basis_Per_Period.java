@@ -41,7 +41,8 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Period {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../VF_Test/LTL Mobile Fueling/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Period.html");
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Mobile Fueling/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Period.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -54,9 +55,10 @@ public class LTL_MF_Quote_Creation_Buyer_Ranking_Basis_Per_Period {
 	@BeforeTest
 	public void setUptest(){
 
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
-
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
+		
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
 		options.addArguments("--disable-web-security");

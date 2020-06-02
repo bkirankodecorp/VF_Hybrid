@@ -41,7 +41,8 @@ public class LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Period {
 	@BeforeSuite
 	public void setUp(){
 
-		htmlReporter= new ExtentHtmlReporter("../Veri-Fuel_Hybrid_Framework/LTL Tankwagon/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Period.html");
+		String path = System.getProperty("user.dir");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Tankwagon/LTL_Quote_Buyer_Creation__Ranking_Basis_$_Per_Period.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();
@@ -54,8 +55,9 @@ public class LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Period {
 	@BeforeTest
 	public void setUptest(){
 
-		System.setProperty("webdriver.chrome.driver",
-				"../Veri-Fuel_Hybrid_Framework/Resources/chromedriver.exe");
+		String path = System.getProperty("user.dir");
+		System.out.println(path); 
+		System.setProperty("webdriver.chrome.driver",path+"\\Resources\\chromedriver.exe");
 
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("chrome.switches","--disable-extensions");
