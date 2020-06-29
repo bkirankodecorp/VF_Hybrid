@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="FTL Quote Creation Buyer $ per Del">
     <classes>
-      <class name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Period"/>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Del"/>
     </classes>
-  </test> <!-- Default test -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- FTL Quote Creation Buyer $ per Del -->
+  <test thread-count="5" name="FTL Seller Response $ per Del">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Seller_Response_Ranking_Basis_Per_Del"/>
+    </classes>
+  </test> <!-- FTL Seller Response $ per Del -->
+  <test thread-count="5" name="FTL Buyer calucation verification for $ per Del">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Del"/>
+    </classes>
+  </test> <!-- FTL Buyer calucation verification for $ per Del -->
+  <test thread-count="5" name="FTL Quote Creation Buyer $ per Gal">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Gal"/>
+    </classes>
+  </test> <!-- FTL Quote Creation Buyer $ per Gal -->
+  <test thread-count="5" name="FTL Seller Response $ per Gal">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Seller_Response_Ranking_Basis_Per_Gal"/>
+    </classes>
+  </test> <!-- FTL Seller Response $ per Gal -->
+  <test thread-count="5" name="FTL Buyer calucation verification for $ per Gal">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal"/>
+    </classes>
+  </test> <!-- FTL Buyer calucation verification for $ per Gal -->
+  <test thread-count="5" name="FTL Quote Creation Buyer $ per Period">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Creation_Buyer_Ranking_Basis_Per_Period"/>
+    </classes>
+  </test> <!-- FTL Quote Creation Buyer $ per Period -->
+  <test thread-count="5" name="FTL Seller Response $ per Period">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Seller_Response_Ranking_Basis_Per_Period"/>
+    </classes>
+  </test> <!-- FTL Seller Response $ per Period -->
+  <test thread-count="5" name="FTL Buyer calucation verification for $ per Period">
+    <classes>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period"/>
+    </classes>
+  </test> <!-- FTL Buyer calucation verification for $ per Period -->
+</suite> <!-- Failed suite [Suite] -->

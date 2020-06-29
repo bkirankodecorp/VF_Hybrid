@@ -17,7 +17,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
@@ -47,7 +46,7 @@ public class LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Period {
 	public void setUp(){
 
 		String path = System.getProperty("user.dir");
-		htmlReporter= new ExtentHtmlReporter(path + "/LTL Tankwagon/LTL_Seller_Response_Ranking_Basis_$_Per_Del.html");
+		htmlReporter= new ExtentHtmlReporter(path + "/LTL Tankwagon/LTL_Seller_Response_Ranking_Basis_$_Per_Period.html");
 
 		// create ExtentReports and attach reporter(s)
 		extent = new ExtentReports();

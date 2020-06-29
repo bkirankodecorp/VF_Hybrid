@@ -7,18 +7,34 @@
 				name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Del" />
 		</classes>
 	</test>
-	 
+	 <test thread-count="5" name="LTL TW Seller Response $ per Del">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Del" />
+		</classes>
+	</test>
 	<test thread-count="5" name="LTL TW Quote Creation Buyer $ per Gal">
 		<classes>
 			<class
 				name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Gal" />
 		</classes>
 	</test>
-	
+	 <test thread-count="5" name="LTL TW Seller Response $ per Gal">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Gal" />
+		</classes>
+	</test>
 	<test thread-count="5" name="LTL TW Quote Creation Buyer $ per Period">
 		<classes>
 			<class
 				name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Creation_Buyer_Ranking_Basis_Per_Period" />
+		</classes>
+	</test>
+	 <test thread-count="5" name="LTL TW Seller Response $ per Period">
+		<classes>
+			<class
+				name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Period" />
 		</classes>
 	</test>
 </suite> <!-- Suite -->

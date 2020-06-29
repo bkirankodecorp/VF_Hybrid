@@ -974,8 +974,8 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 
 			else{
 
-				System.out.println("Round Trip Miles value is not vaidated on workbench and value is " + RoundTripMiles.getText());
-				test1.fail("Round Trip Miles value is not vaidated on workbench and value is " + RoundTripMiles.getText());
+				System.out.println("Round Trip Miles value is not validated on workbench and value is " + RoundTripMiles.getText());
+				test1.fail("Round Trip Miles value is not validated on workbench and value is " + RoundTripMiles.getText());
 
 			}
 
@@ -2219,8 +2219,8 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 
 			else{
 
-				System.out.println("Round Trip Miles value is not vaidated on workbench and value is " + RoundTripMiles.getText());
-				test1.fail("Round Trip Miles value is not vaidated on workbench and value is " + RoundTripMiles.getText());
+				System.out.println("Round Trip Miles value is not validated on workbench and value is " + RoundTripMiles.getText());
+				test1.fail("Round Trip Miles value is not validated on workbench and value is " + RoundTripMiles.getText());
 
 			}
 
