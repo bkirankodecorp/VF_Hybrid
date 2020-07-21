@@ -66,8 +66,8 @@
 				<version>3.0.0-M4</version>
 				<configuration>
 					<suiteXmlFiles>
-						<!-- <suiteXmlFile>VF_FTL.xml</suiteXmlFile> -->
-						<suiteXmlFile>VF_LTL_MF.xml</suiteXmlFile>
+						<suiteXmlFile>VF_FTL.xml</suiteXmlFile>
+						<!-- <suiteXmlFile>VF_LTL_MF.xml</suiteXmlFile> -->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

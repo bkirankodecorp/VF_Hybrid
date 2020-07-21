@@ -1,8 +1,7 @@
 
+
 <!DOCTYPE html>
 <html>
-
-
 <head>
 	<meta charset='utf-8' /> 
 	<meta name='description' content='' />
@@ -12,1826 +11,2160 @@
 	
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/css/extent.css' type='text/css' rel='stylesheet' />
 	
 	<title>ExtentReports</title>
 
 	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
 	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
 </head>
-
 	<body class='extent dark default hide-overflow '>
 		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
 			<span><i class='material-icons'>desktop_windows</i></span>
 		</div>
-
 <nav>
 	<div class="nav-wrapper">
-		<a href="#!" class="brand-logo blue darken-3">Extent</a>
-
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
-
 		<!-- report name -->
 		<span class='report-name'>ExtentReports</span>
-		
 		<!-- report headline -->
 		<span class='report-headline'></span>
-
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
-			<li>
-                <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jul 18, 2020 05:24:49 PM</span>
-				</a>
-			</li>
-			<li>
-                <a href='#!'>
-                    <span class='label blue darken-3'>3.1.5</span>
-				</a>
-			</li>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jul 21, 2020 06:22:41 PM</span>
+			</a>
 		</ul>
 	</div>
-</nav>
-
-		<!-- container -->
+</nav>		<!-- container -->
 		<div class='container'>
-
 <div id='test-view' class='view'>
-				
 	<section id='controls'>
 		<div class='controls grey lighten-4'>
 			<!-- test toggle -->
 			<div class='chip transparent'>
 				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
-					<i class='material-icons'>warning</i> Status
+				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
 			</div>
 			<!-- test toggle -->
-
 			<!-- category toggle -->
 			<!-- category toggle -->
-
 			<!-- clear filters -->
 			<div class='chip transparent hide'>
 				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
-					<i class='material-icons'>close</i> Clear
+				<i class='material-icons'>close</i> Clear
 				</a>
 			</div>
 			<!-- clear filters -->
-
 			<!-- enable dashboard -->
 			<div id='toggle-test-view-charts' class='chip transparent'>
 				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
-					<i class='material-icons'>track_changes</i> Dashboard
+				<i class='material-icons'>track_changes</i> Dashboard
 				</a>
 			</div>
 			<!-- enable dashboard -->
-
 			<!-- search -->
 			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
 				<a href="#" class='search-div'>
-					<i class='material-icons'>search</i> Search
+				<i class='material-icons'>search</i> Search
 				</a>
-
 				<div class='input-field left hide'>
 					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
 				</div>
-				
 			</div>
 			<!-- search -->
 		</div>
 	</section>
-
-
 <div id='test-view-charts' class='subview-full'>
-	<div id='charts-row' class='row nm-v nm-h'>
-		<div class='col s12 m6 l6 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Tests</div>
-				<div class='chart-box'>
-					<canvas id='parent-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>31</span> test(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
-				</div>
-			</div>
-		</div>
-		
-		<div class='col s12 m6 l6 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Steps</div>
-				<div class='chart-box'>
-					<canvas id='child-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='39.583%'><span class='strong'>57</span> step(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='60.417%'>87</span> others
-				</div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-	<div class='subview-left left'>
-		
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>31</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
 		<div class='view-summary'>
-			<h5>Tests</h5>
 			<ul id='test-collection' class='test-collection'>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
 					<div class='test-heading'>
 						<span class='test-name'>Open D1 Fuel Connect</span>
-						<span class='test-time'>Jul 18, 2020 05:29:02 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:25:39 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:29:02 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:29:38 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+883ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:25:39 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:25:48 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+599ms</span>
 </div>
-	<div class='test-desc'>Validating dev site </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:29:37 PM</td>
-					<td class='step-details'>Navigating to dev site</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:29:38 PM</td>
-					<td class='step-details'>Page is navigated to 
-http://dev.veri-fuel.com/qa</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Validating dev site </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:25:47 PM</td>
+				<td class='step-details'>
+						Navigating to dev site
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:25:48 PM</td>
+				<td class='step-details'>
+						Page is navigated to 
+http://dev.veri-fuel.com/qa
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
 					<div class='test-heading'>
 						<span class='test-name'>Seller_Login</span>
-						<span class='test-time'>Jul 18, 2020 05:29:38 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:25:48 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:29:38 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:29:40 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+72ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:25:48 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:25:50 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+783ms</span>
 </div>
-	<div class='test-desc'>Login with Valid Credentials </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:29:38 PM</td>
-					<td class='step-details'>Enter valid Username and Password</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:29:39 PM</td>
-					<td class='step-details'>Username is AutomationFreightseller@kodecorp.com</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:29:40 PM</td>
-					<td class='step-details'>Password is ultralow</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Login with Valid Credentials </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:25:48 PM</td>
+				<td class='step-details'>
+						Enter valid Username and Password
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:25:49 PM</td>
+				<td class='step-details'>
+						Username is AutomationFreightseller@kodecorp.com
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:25:50 PM</td>
+				<td class='step-details'>
+						Password is ultralow
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
 					<div class='test-heading'>
 						<span class='test-name'>verify_Seller_login</span>
-						<span class='test-time'>Jul 18, 2020 05:29:49 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:25:58 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:29:49 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:29:49 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+15ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:25:58 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:25:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+11ms</span>
 </div>
-	<div class='test-desc'>Verify Seller is logged in dev site </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:29:49 PM</td>
-					<td class='step-details'>Verify Seller is logged in dev site</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:29:49 PM</td>
-					<td class='step-details'>AutomationFreightseller@kodecorp.com Seller logged in successfully</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Seller is logged in dev site </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:25:58 PM</td>
+				<td class='step-details'>
+						Verify Seller is logged in dev site
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:25:58 PM</td>
+				<td class='step-details'>
+						AutomationFreightseller@kodecorp.com Seller logged in successfully
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
 					<div class='test-heading'>
 						<span class='test-name'>Navigate_to_Review_Quote</span>
-						<span class='test-time'>Jul 18, 2020 05:29:49 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:25:58 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:29:49 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:09 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+152ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:25:58 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+819ms</span>
 </div>
-	<div class='test-desc'>Verify Seller is navigtaed to Review Quote Page </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:29:49 PM</td>
-					<td class='step-details'>Verify Seller is navigtaed to Review Quote Page</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:30:09 PM</td>
-					<td class='step-details'>Page is navigated to Review Quote</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Seller is navigtaed to Review Quote Page </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:25:58 PM</td>
+				<td class='step-details'>
+						Verify Seller is navigtaed to Review Quote Page
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:26:06 PM</td>
+				<td class='step-details'>
+						Page is navigated to Review Quote
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
 					<div class='test-heading'>
 						<span class='test-name'>Seller_New_Quote_Search</span>
-						<span class='test-time'>Jul 18, 2020 05:30:09 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:06 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:09 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+878ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:06 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+636ms</span>
 </div>
-	<div class='test-desc'>Query with New Quote in Searchbox </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:09 PM</td>
-					<td class='step-details'>Query with New Quote in Searchbox</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:22 PM</td>
-					<td class='step-details'>Edting Quote in New Tab is Quote4</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:25 PM</td>
-					<td class='step-details'>Click Quote in New Tab is Quote4</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Query with New Quote in Searchbox </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:06 PM</td>
+				<td class='step-details'>
+						Query with New Quote in Searchbox
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:17 PM</td>
+				<td class='step-details'>
+						Edting Quote in New Tab is Quote4
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:20 PM</td>
+				<td class='step-details'>
+						Click Quote in New Tab is Quote4
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Quote_status_as_New</span>
-						<span class='test-time'>Jul 18, 2020 05:30:25 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:20 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:25 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+647ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:20 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+456ms</span>
 </div>
-	<div class='test-desc'>Verifying Quote status as New in Quick Response Grid </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:25 PM</td>
-					<td class='step-details'>Verifying Quote status as New in Quick Response Grid</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:30:25 PM</td>
-					<td class='step-details'>Quote4 is in New status</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verifying Quote status as New in Quick Response Grid </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:20 PM</td>
+				<td class='step-details'>
+						Verifying Quote status as New in Quick Response Grid
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:26:21 PM</td>
+				<td class='step-details'>
+						Quote4 is in New status
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
 					<div class='test-heading'>
 						<span class='test-name'>Enter_Tolls_on_Quick_Respose_grid</span>
-						<span class='test-time'>Jul 18, 2020 05:30:25 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:21 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:25 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:34 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+209ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:21 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+594ms</span>
 </div>
-	<div class='test-desc'>Enter Valid Toll data in Quick Response Grid </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:25 PM</td>
-					<td class='step-details'>Enter Valid Toll data in Quick Response Grid</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:28 PM</td>
-					<td class='step-details'>Toll1 value is 50.00</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:31 PM</td>
-					<td class='step-details'>Toll2 value is 40.00</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:34 PM</td>
-					<td class='step-details'>Toll3 value is 10.00</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Enter Valid Toll data in Quick Response Grid </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:21 PM</td>
+				<td class='step-details'>
+						Enter Valid Toll data in Quick Response Grid
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:23 PM</td>
+				<td class='step-details'>
+						Toll1 value is 50.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:25 PM</td>
+				<td class='step-details'>
+						Toll2 value is 40.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:27 PM</td>
+				<td class='step-details'>
+						Toll3 value is 10.00
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Quote_status_as_HoldAsDraft</span>
-						<span class='test-time'>Jul 18, 2020 05:30:34 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:27 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:34 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:34 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+73ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:27 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+63ms</span>
 </div>
-	<div class='test-desc'>Verify Quote Status in Hold As Draft Status </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:34 PM</td>
-					<td class='step-details'>Verify Quote Status in Hold As Draft Status</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:30:34 PM</td>
-					<td class='step-details'>Quote4 is in Hold As Draft status</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Quote Status in Hold As Draft Status </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:27 PM</td>
+				<td class='step-details'>
+						Verify Quote Status in Hold As Draft Status
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:26:27 PM</td>
+				<td class='step-details'>
+						Quote4 is in Hold As Draft status
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
 					<div class='test-heading'>
 						<span class='test-name'>Enter_data_on_Freight_Per_Gallon_in_Quick_Response_Grid</span>
-						<span class='test-time'>Jul 18, 2020 05:30:34 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:27 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:34 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:46 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+940ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:27 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+526ms</span>
 </div>
-	<div class='test-desc'>Enter Valid Data on Freight Per Gallons for all Product categories in Quick response Grid </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:34 PM</td>
-					<td class='step-details'>Enter Valid Data on Freight Per Gallons for all Product categories in Quick response Grid</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:35 PM</td>
-					<td class='step-details'>Freight Per Gallon 1 is 0.0200</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:37 PM</td>
-					<td class='step-details'>Freight Per Gallon 2 is 0.1900</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:38 PM</td>
-					<td class='step-details'>Freight Per Gallon 3 is 0.1875</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:39 PM</td>
-					<td class='step-details'>Freight Per Gallon 4 is 0.0300</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:41 PM</td>
-					<td class='step-details'>Freight Per Gallon 5 is 0.1800</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:42 PM</td>
-					<td class='step-details'>Freight Per Gallon 6 is 0.1950</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:43 PM</td>
-					<td class='step-details'>Freight Per Gallon 7 is 0.0100</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:44 PM</td>
-					<td class='step-details'>Freight Per Gallon 8 is 0.1700</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:46 PM</td>
-					<td class='step-details'>Freight Per Gallon 9 is 0.2075</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Enter Valid Data on Freight Per Gallons for all Product categories in Quick response Grid </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:27 PM</td>
+				<td class='step-details'>
+						Enter Valid Data on Freight Per Gallons for all Product categories in Quick response Grid
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:29 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 1 is 0.0200
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:30 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 2 is 0.1900
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:31 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 3 is 0.1875
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:32 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 4 is 0.0300
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:33 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 5 is 0.1800
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:34 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 6 is 0.1950
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:35 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 7 is 0.0100
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:36 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 8 is 0.1700
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:37 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon 9 is 0.2075
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
 					<div class='test-heading'>
 						<span class='test-name'>Enter_FuelSurcharge</span>
-						<span class='test-time'>Jul 18, 2020 05:30:46 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:37 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:46 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:48 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+83ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:37 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+602ms</span>
 </div>
-	<div class='test-desc'>Enter Valid Data on Fuel Surcharge in Quick Response Grid </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:46 PM</td>
-					<td class='step-details'>Enter Valid Data on Fuel Surcharge in Quick Response Grid</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:48 PM</td>
-					<td class='step-details'>Fuel Surcharge is 10.00</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Enter Valid Data on Fuel Surcharge in Quick Response Grid </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:37 PM</td>
+				<td class='step-details'>
+						Enter Valid Data on Fuel Surcharge in Quick Response Grid
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:39 PM</td>
+				<td class='step-details'>
+						Fuel Surcharge is 10.00
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
 					<div class='test-heading'>
 						<span class='test-name'>save_response_tandc</span>
-						<span class='test-time'>Jul 18, 2020 05:30:48 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:39 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:48 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:54 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+829ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:39 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+931ms</span>
 </div>
-	<div class='test-desc'>Save Values in Quick Response </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:48 PM</td>
-					<td class='step-details'>Save Values in Quick Response</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:54 PM</td>
-					<td class='step-details'>Values are saved in Quick Response Grid</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Save Values in Quick Response </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:39 PM</td>
+				<td class='step-details'>
+						Save Values in Quick Response
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:45 PM</td>
+				<td class='step-details'>
+						Values are saved in Quick Response Grid
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Quote_status_as_ReadytoSubmit</span>
-						<span class='test-time'>Jul 18, 2020 05:30:54 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:45 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:54 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:30:54 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+63ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:45 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:26:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+66ms</span>
 </div>
-	<div class='test-desc'>Verify Quote status is in Ready To Submit </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:54 PM</td>
-					<td class='step-details'>Verify Quote status is in Ready To Submit</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:30:54 PM</td>
-					<td class='step-details'>Quote4 is in Ready to Submit status</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Quote status is in Ready To Submit </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:45 PM</td>
+				<td class='step-details'>
+						Verify Quote status is in Ready To Submit
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:26:45 PM</td>
+				<td class='step-details'>
+						Quote4 is in Ready to Submit status
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
 					<div class='test-heading'>
 						<span class='test-name'>verify_FuelSurcharge_AccessorialFees_And_Tolls_data_on_tandc</span>
-						<span class='test-time'>Jul 18, 2020 05:30:54 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:26:45 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:30:54 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:31 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 36s+721ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:26:45 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+428ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate Toll values for Primary, Backup1 and Backup2 in TandC </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:30:54 PM</td>
-					<td class='step-details'>Verify and Validate Toll values for Primary, Backup1 and Backup2 in TandC</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:30 PM</td>
-					<td class='step-details'>Fuel Surcharge (%) value in TandC is 10.00</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:30 PM</td>
-					<td class='step-details'>Accessorial Service Fees (Per Delivery) : in TandC is 0.00</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Toll1 value in TandC is 50.00</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Toll2 value in TandC is 40.00</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Toll3 value in TandC is 10.00</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate Toll values for Primary, Backup1 and Backup2 in TandC </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:26:45 PM</td>
+				<td class='step-details'>
+						Verify and Validate Toll values for Primary, Backup1 and Backup2 in TandC
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:05 PM</td>
+				<td class='step-details'>
+						Fuel Surcharge (%) value in TandC is 10.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:06 PM</td>
+				<td class='step-details'>
+						Accessorial Service Fees (Per Delivery) : in TandC is 0.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:06 PM</td>
+				<td class='step-details'>
+						Toll1 value in TandC is 50.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:06 PM</td>
+				<td class='step-details'>
+						Toll2 value in TandC is 40.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Toll3 value in TandC is 10.00
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Freight_Per_Gallon_Values_in_TandC</span>
-						<span class='test-time'>Jul 18, 2020 05:31:31 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:07 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:31 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:31 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+480ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:07 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+455ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate Freight per gallon values for all product categories and Terminal (Primary, Backup1 and Backup2) in TandC </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Verify and Validate Freight per gallon values for all product categories and Terminal (Primary, Backup1 and Backup2) in TandC</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon1 value in TandC is 0.0200</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon2 value in TandC is 0.1900</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon3 value in TandC is 0.1875</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon4 value in TandC is 0.0300</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon5 value in TandC is 0.1800</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon6 value in TandC is 0.1950</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon7 value in TandC is 0.0100</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon8 value in TandC is 0.1700</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Freight Per Gallon9 value in TandC is 0.2075</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate Freight per gallon values for all product categories and Terminal (Primary, Backup1 and Backup2) in TandC </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Verify and Validate Freight per gallon values for all product categories and Terminal (Primary, Backup1 and Backup2) in TandC
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon1 value in TandC is 0.0200
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon2 value in TandC is 0.1900
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon3 value in TandC is 0.1875
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon4 value in TandC is 0.0300
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon5 value in TandC is 0.1800
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon6 value in TandC is 0.1950
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon7 value in TandC is 0.0100
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon8 value in TandC is 0.1700
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon9 value in TandC is 0.2075
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
 					<div class='test-heading'>
 						<span class='test-name'>Retrieve_Total_charges_Frt_Per_Gallon_Values_From_TandC</span>
-						<span class='test-time'>Jul 18, 2020 05:31:31 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:07 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:31 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:33 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+551ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:07 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+390ms</span>
 </div>
-	<div class='test-desc'>Retrieve Total Charges Frt Per Gallon from TandC </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:31 PM</td>
-					<td class='step-details'>Retrieve Total Charges Frt Per Gallon from TandC</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:32 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon1 Value in TandC is 0.0287</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:32 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon2 Value in TandC is 0.2143</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:32 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon3 Value in TandC is 0.2076</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:32 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon4 Value in TandC is 0.0389</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:32 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon5 Value in TandC is 0.2027</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon6 Value in TandC is 0.2157</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon7 Value in TandC is 0.0210</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon8 Value in TandC is 0.1950</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon9 Value in TandC is 0.2303</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Retrieve Total Charges Frt Per Gallon from TandC </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Retrieve Total Charges Frt Per Gallon from TandC
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon1 Value in TandC is 0.0287
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:07 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon2 Value in TandC is 0.2143
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon3 Value in TandC is 0.2076
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon4 Value in TandC is 0.0389
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon5 Value in TandC is 0.2027
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon6 Value in TandC is 0.2157
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon7 Value in TandC is 0.0210
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon8 Value in TandC is 0.1950
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon9 Value in TandC is 0.2303
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='29'>
 					<div class='test-heading'>
 						<span class='test-name'>Retrieve_$_Per_Period_Values_From_TandC</span>
-						<span class='test-time'>Jul 18, 2020 05:31:33 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:08 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:33 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:34 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+617ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:08 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+610ms</span>
 </div>
-	<div class='test-desc'>Retrieve $/Period Values from TandC </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>Retrieve $/Period Values from TandC</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>$/Period1 Value in TandC is 15625.06</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>$/Period2 Value in TandC is 107447.65</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:33 PM</td>
-					<td class='step-details'>$/Period3 Value in TandC is 106523.91</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>Total $/Period Value in TandC is 15625.06</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Retrieve $/Period Values from TandC </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:08 PM</td>
+				<td class='step-details'>
+						Retrieve $/Period Values from TandC
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						$/Period1 Value in TandC is 15625.06
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						$/Period2 Value in TandC is 107447.65
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						$/Period3 Value in TandC is 106523.91
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						Total $/Period Value in TandC is 15625.06
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
 					<div class='test-heading'>
 						<span class='test-name'>Retrieve_$_Per_Del_Values_From_TandC</span>
-						<span class='test-time'>Jul 18, 2020 05:31:34 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:09 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:34 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:34 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+479ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:09 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+472ms</span>
 </div>
-	<div class='test-desc'>Retrieve $/Del Values from TandC </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>Retrieve $/Del Values from TandC</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>$/Del1 Value in TandC is 234.82</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>$/Del2 Value in TandC is 1614.75</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>$/Del3 Value in TandC is 1600.87</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>Total $/Del Value in TandC is 234.82</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Retrieve $/Del Values from TandC </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						Retrieve $/Del Values from TandC
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						$/Del1 Value in TandC is 234.82
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						$/Del2 Value in TandC is 1614.75
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						$/Del3 Value in TandC is 1600.87
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						Total $/Del Value in TandC is 234.82
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='31'>
 					<div class='test-heading'>
 						<span class='test-name'>Retrieve_$_Per_Gal_Values_From_TandC</span>
-						<span class='test-time'>Jul 18, 2020 05:31:34 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:09 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:34 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:35 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+485ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:09 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+481ms</span>
 </div>
-	<div class='test-desc'>Retrieve $/Gal Values from TandC </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>Retrieve $/Gal Values from TandC</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>$/Gal1 Value in TandC is 0.0308</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>$/Gal2 Value in TandC is 0.2115</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:34 PM</td>
-					<td class='step-details'>$/Gal3 Value in TandC is 0.2097</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:35 PM</td>
-					<td class='step-details'>Total $/Gal Value in TandC is 0.0308</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Retrieve $/Gal Values from TandC </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:09 PM</td>
+				<td class='step-details'>
+						Retrieve $/Gal Values from TandC
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:10 PM</td>
+				<td class='step-details'>
+						$/Gal1 Value in TandC is 0.0308
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:10 PM</td>
+				<td class='step-details'>
+						$/Gal2 Value in TandC is 0.2115
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:10 PM</td>
+				<td class='step-details'>
+						$/Gal3 Value in TandC is 0.2097
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:10 PM</td>
+				<td class='step-details'>
+						Total $/Gal Value in TandC is 0.0308
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Fuelsurcharge_And_Accessorial_Service_on_Workbench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:35 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:10 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:35 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:41 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+472ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:10 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+92ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate Fuel Surcharge and Accessorial Fees in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:35 PM</td>
-					<td class='step-details'>Verify and Validate Fuel Surcharge and Accessorial Fees in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:38 PM</td>
-					<td class='step-details'>Fuel Surcharge (%) value in Workbench is 10.00</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Accessorial Fees value in Workbench is 0.00</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate Fuel Surcharge and Accessorial Fees in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:10 PM</td>
+				<td class='step-details'>
+						Verify and Validate Fuel Surcharge and Accessorial Fees in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:13 PM</td>
+				<td class='step-details'>
+						Fuel Surcharge (%) value in Workbench is 10.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:15 PM</td>
+				<td class='step-details'>
+						Accessorial Fees value in Workbench is 0.00
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Tolls_in_Workbench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:41 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:15 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:41 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:41 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+406ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:15 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+142ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate Tolls in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Verify and Validate Tolls in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Toll1 value in Workbench is 50.00</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Toll2 value in Workbench is 40.00</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Toll3 value in Workbench is 10.00</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate Tolls in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:15 PM</td>
+				<td class='step-details'>
+						Verify and Validate Tolls in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:15 PM</td>
+				<td class='step-details'>
+						Toll1 value in Workbench is 50.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Toll2 value in Workbench is 40.00
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Toll3 value in Workbench is 10.00
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Freight_Per_Gallon_Values_in_WorkBench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:41 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:16 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:41 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:42 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+712ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:16 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+554ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate Freight Per Gallons in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Verify and Validate Freight Per Gallons in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Freight Per Gallon1 value in workbench is 0.0200</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Freight Per Gallon2 value in workbench is 0.1900</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Freight Per Gallon3 value in workbench is 0.1875</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Freight Per Gallon4 value in workbench is 0.0300</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Freight Per Gallon5 value in workbench is 0.1800</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:41 PM</td>
-					<td class='step-details'>Freight Per Gallon6 value in workbench is 0.1950</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Freight Per Gallon7 value in workbench is 0.0100</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Freight Per Gallon8 value in workbench is 0.1700</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Freight Per Gallon9 value in workbench is 0.2075</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate Freight Per Gallons in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Verify and Validate Freight Per Gallons in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon1 value in workbench is 0.0200
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon2 value in workbench is 0.1900
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon3 value in workbench is 0.1875
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon4 value in workbench is 0.0300
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon5 value in workbench is 0.1800
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon6 value in workbench is 0.1950
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon7 value in workbench is 0.0100
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon8 value in workbench is 0.1700
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Freight Per Gallon9 value in workbench is 0.2075
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='35'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_Total_Charges_Frt_$_Per_Gall_in_Workbench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:42 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:16 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:42 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:42 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+601ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:16 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+454ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate Total Charges Freight Per Gallons in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Verify and Validate Total Charges Freight Per Gallons in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon1 Value in Workbench is 0.0287</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon2 Value in Workbench is 0.2143</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon3 Value in Workbench is 0.2076</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon4 Value in Workbench is 0.0389</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon5 Value in Workbench is 0.2027</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon6 Value in Workbench is 0.2157</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon7 Value in Workbench is 0.0210</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon8 Value in Workbench is 0.1950</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:42 PM</td>
-					<td class='step-details'>Total Charge Frt Per Gallon9 Value in Workbench is 0.2303</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate Total Charges Freight Per Gallons in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Verify and Validate Total Charges Freight Per Gallons in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon1 Value in Workbench is 0.0287
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon2 Value in Workbench is 0.2143
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon3 Value in Workbench is 0.2076
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon4 Value in Workbench is 0.0389
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon5 Value in Workbench is 0.2027
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon6 Value in Workbench is 0.2157
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:16 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon7 Value in Workbench is 0.0210
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon8 Value in Workbench is 0.1950
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Total Charge Frt Per Gallon9 Value in Workbench is 0.2303
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_$_Per_Period_Values_on_Workbench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:43 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:17 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:43 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+253ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:17 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+178ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate $/Period values in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>Verify and Validate $/Period values in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Period1 Value in Workbench is 15625.06</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Period2 Value in Workbench is 107447.65</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Period3 Value in Workbench is 106523.91</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>Total $/Period Value in workbench is 15625.06</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate $/Period values in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Verify and Validate $/Period values in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Period1 Value in Workbench is 15625.06
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Period2 Value in Workbench is 107447.65
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Period3 Value in Workbench is 106523.91
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Total $/Period Value in workbench is 15625.06
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='37'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_$_Per_del_Values_on_Workbench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:43 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:17 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:43 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:43 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+201ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:17 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+262ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate $/Del values in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>Verify and Validate $/Del values in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Del1 Value in Workbench is 234.82</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Del2 Value in Workbench is 1614.75</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Del3 Value in Workbench is 1600.87</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>Toral $/Del  Value in Workbench is 234.82</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate $/Del values in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Verify and Validate $/Del values in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Del1 Value in Workbench is 234.82
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Del2 Value in Workbench is 1614.75
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Del3 Value in Workbench is 1600.87
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Toral $/Del  Value in Workbench is 234.82
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='38'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_$_Per_Gal_Values_on_Workbench</span>
-						<span class='test-time'>Jul 18, 2020 05:31:43 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:17 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:43 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:44 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+232ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:17 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+170ms</span>
 </div>
-	<div class='test-desc'>Verify and Validate $/Gal values in Workbwench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>Verify and Validate $/Gal values in Workbwench</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:43 PM</td>
-					<td class='step-details'>$/Gal1 Value in Workbench is 0.0308</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:44 PM</td>
-					<td class='step-details'>$/Gal2 Value in Workbench is 0.2115</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:44 PM</td>
-					<td class='step-details'>$/Gal3 Value in Workbench is 0.2097</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:31:44 PM</td>
-					<td class='step-details'>Total $/Gal Value in Workbench is 0.0308</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify and Validate $/Gal values in Workbwench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						Verify and Validate $/Gal values in Workbwench
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:17 PM</td>
+				<td class='step-details'>
+						$/Gal1 Value in Workbench is 0.0308
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:18 PM</td>
+				<td class='step-details'>
+						$/Gal2 Value in Workbench is 0.2115
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:18 PM</td>
+				<td class='step-details'>
+						$/Gal3 Value in Workbench is 0.2097
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:18 PM</td>
+				<td class='step-details'>
+						Total $/Gal Value in Workbench is 0.0308
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='39'>
 					<div class='test-heading'>
 						<span class='test-name'>check_Publish_To_Buyer_Calculator</span>
-						<span class='test-time'>Jul 18, 2020 05:31:44 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:18 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:44 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:46 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+614ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:18 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+456ms</span>
 </div>
-	<div class='test-desc'>Check Publish to buyer calculator checkbox </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:44 PM</td>
-					<td class='step-details'>Check Publish to buyer calculator checkbox</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:46 PM</td>
-					<td class='step-details'>Checked Publish to buyer calculator checkbox</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Check Publish to buyer calculator checkbox </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:18 PM</td>
+				<td class='step-details'>
+						Check Publish to buyer calculator checkbox
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:20 PM</td>
+				<td class='step-details'>
+						Checked Publish to buyer calculator checkbox
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='40'>
 					<div class='test-heading'>
 						<span class='test-name'>Get_Values_from_Buyer_Calculator</span>
-						<span class='test-time'>Jul 18, 2020 05:31:47 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:21 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:47 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:31:48 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+350ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:21 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+155ms</span>
 </div>
-	<div class='test-desc'>Retrieve Buyer Calucations in Workbench </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:47 PM</td>
-					<td class='step-details'>Retrieve Buyer Calucations in Workbench</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:47 PM</td>
-					<td class='step-details'>Truck Drop or Pump Rate (Gals per mins) value is 325.0</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:47 PM</td>
-					<td class='step-details'>Round Trip Time value is 2094</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:47 PM</td>
-					<td class='step-details'>Terminal Loading Time value is 45</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:47 PM</td>
-					<td class='step-details'>Avg. Fueling Drop or Pump Off Time (mins) value is 26.2</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:47 PM</td>
-					<td class='step-details'>Gallons Dropped value is 8500</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:48 PM</td>
-					<td class='step-details'>Total Round Trip Delivery Time (mins) value is 2165.2</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:48 PM</td>
-					<td class='step-details'>Freight $/Del. value is 234.82</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:48 PM</td>
-					<td class='step-details'>Freight Revenue $/Hour value is 6.51</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:48 PM</td>
-					<td class='step-details'>Round Trip Miles value is 1902</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:48 PM</td>
-					<td class='step-details'>$ per Round Trip Mile value is 0.12</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:48 PM</td>
-					<td class='step-details'>PC Miler One Way Distance and Time value is 952 miles in 17 hour(s) 29 minute(s)</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Retrieve Buyer Calucations in Workbench </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Retrieve Buyer Calucations in Workbench
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Truck Drop or Pump Rate (Gals per mins) value is 325.0
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Round Trip Time value is 2094
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Terminal Loading Time value is 45
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Avg. Fueling Drop or Pump Off Time (mins) value is 26.2
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Gallons Dropped value is 8500
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Total Round Trip Delivery Time (mins) value is 2165.2
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Freight $/Del. value is 234.82
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Freight Revenue $/Hour value is 6.51
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:21 PM</td>
+				<td class='step-details'>
+						Round Trip Miles value is 1902
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:22 PM</td>
+				<td class='step-details'>
+						$ per Round Trip Mile value is 0.12
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:22 PM</td>
+				<td class='step-details'>
+						PC Miler One Way Distance and Time value is 952 miles in 17 hour(s) 29 minute(s)
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='41'>
 					<div class='test-heading'>
 						<span class='test-name'>Verify_finaltotal_and_RankingBasis_Values</span>
-						<span class='test-time'>Jul 18, 2020 05:31:51 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:24 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:31:51 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:32:05 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+422ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:24 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+168ms</span>
 </div>
-	<div class='test-desc'>Verify Final Total anf Ranking Basis value </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:51 PM</td>
-					<td class='step-details'>Verify Final Total anf Ranking Basis value</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:31:51 PM</td>
-					<td class='step-details'>Final Total value is 234.82</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:32:05 PM</td>
-					<td class='step-details'>Ranking basis has value as 234.82</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:32:05 PM</td>
-					<td class='step-details'>Total Final and Ranking Basis are same and validated and value is 234.82</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Final Total anf Ranking Basis value </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:24 PM</td>
+				<td class='step-details'>
+						Verify Final Total anf Ranking Basis value
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:24 PM</td>
+				<td class='step-details'>
+						Final Total value is 234.82
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:37 PM</td>
+				<td class='step-details'>
+						Ranking basis has value as 234.82
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:27:37 PM</td>
+				<td class='step-details'>
+						Total Final and Ranking Basis are same and validated and value is 234.82
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='42'>
 					<div class='test-heading'>
 						<span class='test-name'>Submit_response</span>
-						<span class='test-time'>Jul 18, 2020 05:32:05 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:37 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:32:05 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:32:14 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+739ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:37 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:27:45 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+23ms</span>
 </div>
-	<div class='test-desc'>Submit quote response in quick response grid </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:32:05 PM</td>
-					<td class='step-details'>Submit quote response in quick response grid</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:32:08 PM</td>
-					<td class='step-details'>1-800 Flowers 0001, 5355 Districtplex Farms Dr, Memphis, TN</td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:32:14 PM</td>
-					<td class='step-details'>Quote is submitted from Seller Side</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Submit quote response in quick response grid </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:37 PM</td>
+				<td class='step-details'>
+						Submit quote response in quick response grid
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:40 PM</td>
+				<td class='step-details'>
+						1-800 Flowers 0001, 5355 Districtplex Farms Dr, Memphis, TN
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:45 PM</td>
+				<td class='step-details'>
+						Quote is submitted from Seller Side
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='43'>
 					<div class='test-heading'>
 						<span class='test-name'>verify_Submitted_quote_in_Active</span>
-						<span class='test-time'>Jul 18, 2020 05:32:14 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:27:46 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:32:14 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:32:37 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+360ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:27:46 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:28:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+840ms</span>
 </div>
-	<div class='test-desc'>Verify Submitted quote in Active tabd from seller side </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:32:14 PM</td>
-					<td class='step-details'>Verify Submitted quote in Active tabd from seller side</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:32:37 PM</td>
-					<td class='step-details'>Quote4 quote is in Active tab</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Submitted quote in Active tabd from seller side </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:27:46 PM</td>
+				<td class='step-details'>
+						Verify Submitted quote in Active tabd from seller side
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:07 PM</td>
+				<td class='step-details'>
+						Quote4 quote is in Active tab
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='44'>
 					<div class='test-heading'>
 						<span class='test-name'>Logout_seller</span>
-						<span class='test-time'>Jul 18, 2020 05:32:40 PM</span>
+						<span class='test-time'>Jul 21, 2020 06:28:10 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 18, 2020 05:32:40 PM</span>
-	<span class='label end-time'>Jul 18, 2020 05:32:42 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+137ms</span>
+	<span class='label start-time'>Jul 21, 2020 06:28:10 PM</span>
+	<span class='label end-time'>Jul 21, 2020 06:28:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+673ms</span>
 </div>
-	<div class='test-desc'>Verify Seller is logged out successfully </div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>5:32:40 PM</td>
-					<td class='step-details'>Verify Seller is logged out successfully</td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>5:32:42 PM</td>
-					<td class='step-details'>AutomationFreightseller@kodecorp.com Seller Logged Out Successfully</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+<div class='test-desc'>Verify Seller is logged out successfully </div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>6:28:10 PM</td>
+				<td class='step-details'>
+						Verify Seller is logged out successfully
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>6:28:12 PM</td>
+				<td class='step-details'>
+						AutomationFreightseller@kodecorp.com Seller Logged Out Successfully
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
 	<!-- subview left -->
-
 	<div class='subview-right left'>
 		<div class='view-summary'>
-			<h5 class='test-name'></h5>
-
-			<div id='step-filters' class="right">
-				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
-				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
-				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
-				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
-				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
-				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
-				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
-				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			<div id='step-filters' class="right sr-filters">
+				<a class="btn-floating waves-effect waves-light green" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></a>
+				<a class="btn-floating waves-effect waves-light red" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light red darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></a>
+				<a class="btn-floating waves-effect waves-light pink text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></a>
+				<a class="btn-floating waves-effect waves-light orange" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></a>
+				<a class="btn-floating waves-effect waves-light teal" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></a>
+				<a class="btn-floating waves-effect waves-light grey" status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></a>
 			</div>
+			<h5 class='test-name'></h5>
 		</div>
 	</div>
 	<!-- subview right -->
-
 </div>
-<!-- test view -->
-<!-- category view -->
-<!-- exception view -->
-<div id='dashboard-view' class='view hide'>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -1845,37 +2178,36 @@ http://dev.veri-fuel.com/qa</td>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>144</div>
+					<div class='panel-lead'>0</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 18, 2020 05:24:49 PM</div>
+					<div class='panel-lead'>Jul 21, 2020 06:22:41 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 18, 2020 06:01:55 PM</div>
+			 		<div class='panel-lead'>Jul 21, 2020 06:47:18 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 37m 6s+138ms</div>
+					<div class='panel-lead'>0h 24m 36s+589ms</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <!-- dashboard view -->
-<!-- testrunner-logs view -->
-		</div>
+<!-- testrunner-logs view -->		</div>
 		<!-- container -->
-
 		<script>
 			var statusGroup = {
+                parentCount: 31,
 				passParent: 31,
 				failParent: 0,
 				fatalParent: 0,
@@ -1883,16 +2215,17 @@ http://dev.veri-fuel.com/qa</td>
 				warningParent: 0,
 				skipParent: 0,
 				exceptionsParent: 0,
-				
-				passChild: 57,
+				childCount: 0,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 87,
+				infoChild: 0,
+				debugChild: 0,
 				exceptionsChild: 0,
-				
+				grandChildCount: 0,
 				passGrandChild: 0,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
@@ -1900,15 +2233,17 @@ http://dev.veri-fuel.com/qa</td>
 				warningGrandChild: 0,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
+				debugGrandChild: 0,
 				exceptionsGrandChild: 0,
 			};
 		</script>
-		
-			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
-		
-		
- 		<script type='text/javascript'>
- 		</script>
+		<script>
+			var timeline = {
+			        "Open D1 Fuel Connect":8.599,"Seller_Login":1.783,"verify_Seller_login":0.011,"Navigate_to_Review_Quote":7.819,"Seller_New_Quote_Search":14.636,"Verify_Quote_status_as_New":0.456,"Enter_Tolls_on_Quick_Respose_grid":6.594,"Verify_Quote_status_as_HoldAsDraft":0.063,"Enter_data_on_Freight_Per_Gallon_in_Quick_Response_Grid":9.526,"Enter_FuelSurcharge":1.602,"save_response_tandc":5.931,"Verify_Quote_status_as_ReadytoSubmit":0.066,"verify_FuelSurcharge_AccessorialFees_And_Tolls_data_on_tandc":21.428,"Verify_Freight_Per_Gallon_Values_in_TandC":0.455,"Retrieve_Total_charges_Frt_Per_Gallon_Values_From_TandC":1.39,"Retrieve_$_Per_Period_Values_From_TandC":0.61,"Retrieve_$_Per_Del_Values_From_TandC":0.472,"Retrieve_$_Per_Gal_Values_From_TandC":0.481,"Verify_Fuelsurcharge_And_Accessorial_Service_on_Workbench":5.092,"Verify_Tolls_in_Workbench":0.142,"Verify_Freight_Per_Gallon_Values_in_WorkBench":0.554,"Verify_Total_Charges_Frt_$_Per_Gall_in_Workbench":0.454,"Verify_$_Per_Period_Values_on_Workbench":0.178,"Verify_$_Per_del_Values_on_Workbench":0.262,"Verify_$_Per_Gal_Values_on_Workbench":0.17,"check_Publish_To_Buyer_Calculator":2.456,"Get_Values_from_Buyer_Calculator":1.155,"Verify_finaltotal_and_RankingBasis_Values":13.168,"Submit_response":8.023,"verify_Submitted_quote_in_Active":21.84,"Logout_seller":1.673
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
 	</body>
-	
 </html>
