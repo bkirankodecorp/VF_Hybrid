@@ -18,7 +18,7 @@
 			<class
 				name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Del" />
 		</classes>
-	</test>
+	</test> 
 	<test thread-count="5" name="FTL Quote Creation Buyer $ per Gal">
 		<classes>
 			<class
@@ -36,7 +36,7 @@
 			<class
 				name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Gal" />
 		</classes>
-	</test>
+	</test> 
 	<test thread-count="5" name="FTL Quote Creation Buyer $ per Period">
 		<classes>
 			<class

@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="VF_Quote_Creation_And_Response.LTL_TW_Quote_Seller_Response_Ranking_Basis_Per_Period"/>
+      <class name="VF_Quote_Creation_And_Response.FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -830,7 +830,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Period {
 
 			}
 			Thread.sleep(2000);
-			WebElement accessoriesfees=driver.findElement(By.xpath("/html/body/div[22]/div[2]/div[1]/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div[5]/div[2]/div[1]/div[4]/div/label[2]"));
+			WebElement accessoriesfees=driver.findElement(By.xpath("/html/body/div[18]/div[2]/div[1]/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div[5]/div[2]/div[1]/div[4]/div/label[2]"));
 			String expectedfuelaccessoriesfees=ExcelUtils.getCellData(36, colnum);
 			String actualaccessoriesfees=accessoriesfees.getText();
 			if(actualaccessoriesfees.equalsIgnoreCase(expectedfuelaccessoriesfees)){
@@ -1151,7 +1151,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Period {
 		ExtentTest test1 = extent.createTest("check_Publish_To_Buyer_Calculator", "Check Publish to buyer calculator checkbox");
 		test1.log(Status.INFO, "Check Publish to buyer calculator checkbox");
 
-		WebElement buyercalculator=driver.findElement(By.xpath("/html/body/div[22]/div[2]/div[1]/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div[3]/div/div[1]/div/div[2]/div/div[13]/div/span/input[1]"));
+		WebElement buyercalculator=driver.findElement(By.xpath("/html/body/div[18]/div[2]/div[1]/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div[3]/div/div[1]/div/div[2]/div/div[13]/div/span/input[1]"));
 		Thread.sleep(2000);
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();", buyercalculator);
 		VF_Screenshot.FTL_Seller_Quote_Response_screenshot.CaptureScreenshot(driver);
@@ -1177,7 +1177,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Period {
 			System.out.println("Truck Drop or Pump Rate (Gals per mins) value is "+ TruckDroporPumpRateGalspermins.getAttribute("value"));
 			test1.info("Truck Drop or Pump Rate (Gals per mins) value is "+ TruckDroporPumpRateGalspermins.getAttribute("value"));
 
-			WebElement RoundTripTime=driver.findElement(By.xpath("/html/body/div[22]/div[2]/div[1]/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div[3]/div/div[1]/div/div[2]/div/div[2]/div/div[1]/input"));
+			WebElement RoundTripTime=driver.findElement(By.xpath("/html/body/div[18]/div[2]/div[1]/div/div/div[2]/div[4]/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div/div[4]/div[3]/div/div[1]/div/div[2]/div/div[2]/div/div[1]/input"));
 			ExcelUtils.setCellData(RoundTripTime.getAttribute("value"), 123, colnum);
 
 			System.out.println("Round Trip Time value is "+ RoundTripTime.getAttribute("value"));
@@ -1436,6 +1436,7 @@ public class FTL_Quote_Seller_Response_Ranking_Basis_Per_Period {
 
 
 			}
+			
 			Thread.sleep(3000);
 
 		} catch (Exception e) {

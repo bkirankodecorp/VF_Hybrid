@@ -371,7 +371,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 
 		try {
 
-			WebElement tandcview=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[33]/a"));
+			WebElement tandcview=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[38]/a"));
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", tandcview);
 			test1.info("View in TandC in Manaage Rouds is Opened");
 
@@ -794,7 +794,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 		ExtentTest test1 = extent.createTest("Open_Workbench", "Open Workbench View");
 		test1.log(Status.INFO, "Open Workbench View");
 
-		WebElement workbench=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[32]/a"));
+		WebElement workbench=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[37]/a"));
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();", workbench);
 
 		test1.info("Click Workbench View in Manage Rounds");
@@ -1593,7 +1593,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 
 		try {
 
-			WebElement tandcview=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[33]/a"));
+			WebElement tandcview=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[38]/a"));
 			((JavascriptExecutor)driver).executeScript("arguments[0].click();", tandcview);
 			test1.info("View in TandC in Manaage Rouds is Opened");
 
@@ -2039,7 +2039,7 @@ public class FTL_Quote_Buyer_Side_Verification_Ranking_Basis_Per_Period {
 		ExtentTest test1 = extent.createTest("Open_Workbench_for_Awarded_Quote", "Open Workbench View");
 		test1.log(Status.INFO, "Open Workbench View");
 
-		WebElement workbench=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[32]/a"));
+		WebElement workbench=driver.findElement(By.xpath("//*[@id='ReviewRFPSubGrid']/div[3]/table/tbody/tr/td[37]/a"));
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();", workbench);
 
 		test1.info("Click Workbench View in Manage Rounds");
